@@ -12,7 +12,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Poppins"  
+  --default-font: "Roboto"  
   system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Montserrat",  sans-serif;
   --nav-font: "Open Sans",  sans-serif;
@@ -249,6 +249,7 @@ h6 {
 
   .navmenu li {
     position: relative;
+    text-decoration: none;
   }
 
   .navmenu a,
@@ -837,112 +838,83 @@ section,
 
 /*--------------------------------------------------------------
 # Hero Section
-/* Hero --------------------------------------------------------------*/
+/* Hero */
 .hero {
   width: 100%;
-  height: 100vh;             /* Full height mengikuti tinggi carousel */
-  position: relative;        /* Diperlukan untuk overlay */
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  overflow: hidden;          /* Biar gambar rapih */
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Overlay gelap / transparan */
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 100%);
-  position: absolute;
-  inset: 0;                  /* Pengganti top/left/right/bottom:0 */
-  z-index: 1;
+/* Carousel full screen */
+.hero .carousel,
+.hero .carousel-inner,
+.hero .carousel-item,
+.hero img {
+  height: 100vh;
 }
 
-.hero .container {
-  position: relative;
-  z-index: 2;                /* Supaya teks berada di atas overlay */
+.hero img {
+  object-fit: cover;
 }
 
-/* Title */
+/* Overlay gelap */
+.hero-overlay {
+  display:none
+}
+
+/* Content di atas carousel */
+.hero-content {
+  z-index: 2;
+  color: #fff;
+}
+
+/* Typography */
 .hero h1 {
-  margin: 0;
   font-size: 48px;
   font-weight: 700;
-  line-height: 56px;
 }
 
 .hero h1 span {
   color: var(--accent-color);
 }
 
-/* Description */
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin: 5px 0 30px 0;
   font-size: 20px;
-  font-weight: 400;
+  opacity: 0.9;
 }
 
 /* Buttons */
-.hero .btn-get-started {
-  color: var(--contrast-color);
+.btn-get-started {
   background: var(--accent-color);
-  font-family: var(--heading-font);
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1px;
+  color: #fff;
   padding: 12px 30px;
   border-radius: 4px;
-  transition: 0.5s;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
-.hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-/* Watch Video */
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  margin-left: 25px;
-  color: var(--default-color);
+.btn-watch-video {
+  color: #fff;
+  text-decoration: none;
   font-weight: 600;
 }
 
-.hero .btn-watch-video i {
-  color: var(--accent-color);
+.btn-watch-video i {
   font-size: 32px;
   margin-right: 8px;
-  transition: 0.3s;
-  line-height: 0;
-}
-
-.hero .btn-watch-video:hover {
   color: var(--accent-color);
 }
 
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-/* Mobile Responsive */
-@media (max-width: 640px) {
+/* Mobile */
+@media (max-width: 768px) {
   .hero h1 {
     font-size: 28px;
-    line-height: 36px;
   }
 
   .hero p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
-
-  .hero .btn-get-started,
-  .hero .btn-watch-video {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
+
 
 
 @keyframes up-down {
@@ -1017,6 +989,12 @@ section,
   border-radius: 0px;
 }
 
+/* why choose us */
+.why-box {
+color: var(--accent-color);
+border-radius: 16px;
+padding: 40px;
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1171,56 +1149,130 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
+/* SERVICES IMAGE CARD */
 .services .service-item {
-  background-color: var(--surface-color);
-  text-align: center;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  padding: 80px 20px;
-  transition: border ease-in-out 0.3s;
+  position: relative;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+/* Image full */
+.services .service-item img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-.services .service-item .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: var(--accent-color);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: 0.3s;
+/* Overlay navy */
+.services .service-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 29, 55, 0.9),
+    rgba(10, 29, 55, 0.35)
+  );
+  z-index: 1;
 }
 
-.services .service-item .icon i {
-  color: var(--contrast-color);
-  font-size: 28px;
-  transition: ease-in-out 0.3s;
+/* Text */
+.services .service-item h3,
+.services .service-item p {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  z-index: 2;
 }
 
 .services .service-item h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
+  bottom: 70px;
   font-size: 22px;
-  transition: 0.3s;
+  font-weight: 700;
 }
 
 .services .service-item p {
-  line-height: 24px;
+  bottom: 20px;
   font-size: 14px;
-  margin-bottom: 0;
+  line-height: 1.6;
 }
 
+/* Hover */
 .services .service-item:hover {
-  border-color: var(--accent-color);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+}
+/* Container card */
+.services .service-item {
+  position: relative;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.services .service-item:hover h3 {
-  color: var(--accent-color);
+/* Image */
+.services .service-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;   /* kunci zoom halus */
 }
+
+/* Zoom on hover */
+.services .service-item:hover img {
+  transform: scale(1.12);
+}
+
+/* Overlay */
+.services .service-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 29, 55, 0.9),
+    rgba(10, 29, 55, 0.35)
+  );
+  z-index: 1;
+  transition: background .4s ease;
+}
+
+/* Text */
+.services .service-item h3,
+.services .service-item p {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+/* Title */
+.services .service-item h3 {
+  bottom: 70px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Description */
+.services .service-item p {
+  bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Card hover lift */
+.services .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -1228,11 +1280,12 @@ section,
 .testimonials {
   padding: 80px 0;
   position: relative;
+  background-color: var(--accent-color);
 }
 
 .testimonials:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  /* background: color-mix(in srgb, var(--background-color), transparent 30%); */
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1885,6 +1938,12 @@ section,
   color: var(--accent-color);
 }
 
+
+.service-img {
+  cursor: pointer;
+}
+
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
@@ -1953,3 +2012,52 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.brand-area {
+  padding: 100px 0;
+  background: var(--light-3);
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .brand-area {
+    padding: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .brand-area {
+    padding: 60px 0;
+  }
+}
+.brand-area .clients-logos {
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+}
+.brand-area .clients-logos .single-image {
+  display: inline-block;
+  margin: 13px 10px;
+  background-color: var(--white);
+  line-height: 100px;
+  padding: 8px 25px;
+  border-radius: 8px;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  border: 1px solid #eee;
+}
+.brand-area .clients-logos .single-image:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.096);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+.brand-area .clients-logos img {
+  max-width: 170px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+
