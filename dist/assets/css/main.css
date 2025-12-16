@@ -15,7 +15,7 @@
   --default-font: "Roboto"  
   system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Montserrat",  sans-serif;
-  --nav-font: "Open Sans",  sans-serif;
+  --nav-font: "roboto",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -24,6 +24,7 @@
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #222222; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #106eea; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color-alternative: #022b61; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -883,6 +884,36 @@ section,
   opacity: 0.9;
 }
 
+.hero-video-preview {
+  z-index: 10;
+}
+
+.video-thumb {
+  width: 280px;
+  margin-right: -420px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+.play-icon {
+  position: absolute;
+  margin-left: 222px;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  color: white;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .video-thumb {
+    width: 220px;
+  }
+}
+
+
 /* Buttons */
 .btn-get-started {
   background: var(--accent-color);
@@ -988,6 +1019,42 @@ section,
   inset: 0;
   border-radius: 0px;
 }
+/* facilities */
+.facilities {
+  padding: 80px 0;
+}
+
+.facility-box {
+  background: #fff;
+  padding: 30px 25px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  height: 100%;
+  transition: 0.3s ease;
+}
+
+.facility-box i {
+  font-size: 42px;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.facility-box h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.facility-box p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.facility-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
 
 /* why choose us */
 .why-box {
@@ -1280,7 +1347,7 @@ padding: 40px;
 .testimonials {
   padding: 80px 0;
   position: relative;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color-alternative);
 }
 
 .testimonials:before {
@@ -1578,112 +1645,6 @@ padding: 40px;
   opacity: 1;
 }
 
-/*--------------------------------------------------------------
-# Pricing Section
---------------------------------------------------------------*/
-.pricing .pricing-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing .pricing-item h3 {
-  font-weight: 400;
-  margin: -20px -20px 20px -20px;
-  padding: 20px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
-}
-
-.pricing .pricing-item h4 {
-  font-size: 36px;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.pricing .pricing-item h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing .pricing-item h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing .pricing-item ul {
-  padding: 15px 0;
-  list-style: none;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.pricing .pricing-item ul li {
-  padding-bottom: 16px;
-}
-
-.pricing .pricing-item ul i {
-  color: var(--accent-color);
-  font-size: 18px;
-  padding-right: 4px;
-}
-
-.pricing .pricing-item ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  text-decoration: line-through;
-}
-
-.pricing .btn-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
-  margin: 0 -20px -20px -20px;
-  padding: 20px 15px;
-  text-align: center;
-}
-
-.pricing .btn-buy {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 4px;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: var(--heading-font);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.pricing .btn-buy:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.pricing .featured h3 {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .advanced {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  width: 200px;
-  position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
-  z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
-}
 
 /*--------------------------------------------------------------
 # Faq Section
@@ -1750,8 +1711,8 @@ padding: 40px;
 }
 
 .faq .faq-container .faq-active {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--accent-color-alternative);
+  border-color: var(--accent-color-alternative);
   color: var(--contrast-color);
 }
 
