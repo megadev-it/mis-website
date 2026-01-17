@@ -4,7 +4,108 @@ body {
   line-height: 1.7;
   color: #ffffff;
   background-color: #0f3d5e;
+  position: relative;
 }
+/* body > *:not(.ice-bg-global) {
+  position: relative;
+  z-index: 1;
+} */
+
+
+/* Ice layer global */
+.ice-bg-global {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ice icon base */
+.ice {
+  position: absolute;
+  font-size: 200px;
+  opacity: 0.04;
+  animation: floatIce 20s linear infinite;
+}
+
+/* Variasi posisi & ukuran */
+.ice-1 {
+  top: 10%;
+  left: 5%;
+}
+
+.ice-2 {
+  top: 50%;
+  left: 15%;
+  font-size: 260px;
+  animation-duration: 35s;
+}
+
+.ice-3 {
+  top: 20%;
+  right: 8%;
+  font-size: 220px;
+  animation-duration: 45s;
+}
+
+.ice-4 {
+  bottom: 15%;
+  right: 18%;
+  font-size: 300px;
+  animation-duration: 40s;
+}
+
+.ice-5 {
+  bottom: 5%;
+  left: 35%;
+  font-size: 180px;
+  animation-duration: 25s;
+}
+
+/* Animasi pelan */
+@keyframes floatIce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE ICE BACKGROUND
+   ========================= */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .ice {
+    font-size: 90px;
+    opacity: 0.05;
+  }
+
+  .ice-2,
+  .ice-4 {
+    display: none; /* kurangi jumlah icon */
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  .ice {
+    font-size: 60px;
+    opacity: 0.04;
+    animation-duration: 60s;
+  }
+
+  .ice-3 {
+    font-size: 80px;
+  }
+}
+
 
 .section-tag {
   color: #4988C4;
@@ -97,6 +198,7 @@ body {
       margin-top: 15px;
     }
 
+
     .btn-primary-custom {
       background: #4988C4;
       border: none;
@@ -153,6 +255,14 @@ body {
     @media (max-width: 768px) {
       .hero-title {
         font-size: 2.2rem;
+      }}
+    @media (max-width: 576px) {
+      .hero-badge {
+       visibility: hidden;
+      }
+      .hero-title {
+        font-size: 16px;
+        margin-top: 100px;
       }
     }
 
@@ -277,7 +387,7 @@ body {
 
 /* client section */
 .client-section {
-  background-color: #0f3d5e;
+   background: linear-gradient(135deg, #0f3d5e, #08293f);
 }
 
 .client-marquee {
@@ -456,9 +566,9 @@ body {
 
 /* section testimonial */
 
-.testimonial-slider {
+/* .testimonial-slider {
   background: #0f3d5e;
-}
+} */
 
 .testimonial-box {
   background: #fff;
@@ -528,9 +638,9 @@ body {
 
 
 /* section why choose us */
-.why-choose-us-alt {
+/* .why-choose-us-alt {
   background: #0f3d5e;
-}
+} */
 
 .why-list {
   display: flex;
@@ -600,9 +710,9 @@ body {
 }
 
 /* faq */
-.faq-section {
+/* .faq-section {
   background: #0f3d5e;
-}
+} */
 
 .faq-title {
   font-weight: 700;
@@ -709,9 +819,9 @@ body {
 }
 
 /* contact */
-.contact-section {
+/* .contact-section {
   background: #0f3d5e;
-}
+} */
 
 .map-box {
   border-radius: 16px;
@@ -883,3 +993,61 @@ body {
   background: rgba(0,0,0,0.25);
   font-size: 0.9rem;
 }
+
+
+/* facility showcase */
+.facility-showcase {
+  background: linear-gradient(135deg, #0f3d5e, #08293f);
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-image {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.facility-image img {
+  width: 100%;
+  height: auto;
+  transition: transform .6s ease;
+}
+
+.facility-image:hover img {
+  transform: scale(1.06);
+}
+
+/* floating badge */
+.image-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(15,61,94,0.9);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(6px);
+}
+
+.facility-list {
+  list-style: none;
+  padding: 0;
+}
+
+.facility-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.facility-list i {
+  color: #4dd0e1;
+  margin-right: 8px;
+}
+
+
