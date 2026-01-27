@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Service - PT. Mega Indo Sejahtera - Cold Storage</title>
+  <title>Service - PT. Mega International Sejahtera - Cold Storage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="../dist/assets/img/mcs-no-bg.png">
 
@@ -26,6 +26,13 @@
 </head>
 <body>
 
+   <!-- icon WA melayang -->
+      <a href="https://wa.me/6281285014890" 
+        class="wa-float" 
+        target="_blank" 
+        aria-label="Chat WhatsApp">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+      </a>
 
 <!-- NAVBAR -->
 <nav id="mainNavbar"
@@ -342,7 +349,7 @@
         <div class="swiper-slide">
           <div class="testimonial-box">
             <p>
-              “Mega Indo Sejahtera delivers outstanding cold storage services.
+              “Mega International Sejahtera delivers outstanding cold storage services.
               Their monitoring system ensures full temperature control.Cold Storage competency personnel with professionals handling in operations manners, fast response and good corporation with customers.”
             </p>
             <span class="quote-icon">“</span>
@@ -537,8 +544,8 @@
       <!-- Company -->
       <div class="col-lg-4">
         <h4 class="footer-logo">
-          <img src="../dist/assets/img/mcs-no-bg.png" style="width: 50px; height: 50px;" alt="Logo Mega Indo Sejahtera">
-          Mega Indo Sejahtera</h4>
+          <img src="../dist/assets/img/mcs-no-bg.png" style="width: 50px; height: 50px;" alt="Logo Mega International Sejahtera">
+          Mega International Sejahtera</h4>
         <p class="footer-desc">
           Providing reliable cold storage and temperature-controlled logistics
           solutions to support food, pharmaceutical, and agricultural industries.
@@ -602,7 +609,7 @@
   <div class="footer-bottom mt-5">
     <div class="container text-center">
       <p class="mb-0">
-        Cold Storage - Mega Indo Sejahtera ©Copyright 2026 All Rights Reserved.
+        Cold Storage - Mega International Sejahtera ©Copyright 2026 All Rights Reserved.
       </p>
     </div>
   </div>
@@ -738,6 +745,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       bsCollapse.hide();
     });
   });
+</script>
+
+<!-- icon WA -->
+<script>
+    const waBtn = document.querySelector('.wa-float');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            waBtn.classList.remove('hidden');
+        } else {
+            waBtn.classList.add('hidden');
+        }
+    });
+
+    // mulai dalam keadaan hidden
+    waBtn.classList.add('hidden');
 </script>
 
 

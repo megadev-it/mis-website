@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About - PT. Mega Indo Sejahtera - Cold Storage</title>
+  <title>About - PT. Mega International Sejahtera - Cold Storage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="../dist/assets/img/mcs-no-bg.png">
 
@@ -25,7 +25,13 @@
 
 </head>
 <body>
-
+<!-- icon WA melayang -->
+      <a href="https://wa.me/6281285014890" 
+        class="wa-float" 
+        target="_blank" 
+        aria-label="Chat WhatsApp">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+      </a>
 
 <!-- NAVBAR -->
 <nav id="mainNavbar"
@@ -50,9 +56,7 @@
          <li class="nav-item"><a class="nav-link" href="article.html">Article</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="iso.html">ISO</a></li>
-        <li class="nav-item">
-          <a class="btn btn-success p-3" href="https://wa.me/6281285014890" target="_blank"><i class="fa-brands fa-whatsapp fa-2xl" style="color: #ffffff;"></i></a>
-        </li>
+        
       </ul>
     </div>
   </div>
@@ -115,7 +119,7 @@
           </div>
 
           <p>
-             Mega Indo Sejahtera is a service company that operates a cold storage warehouse starting the end of 2013, located in MM2100 Cibitung Industrial Area, Bekasi, West Java, Indonesia. Supported by modern equipment and systems as well as manpower who are experts in their fields, PT. MEGA INTERNATIONAL SEJAHTERA expected to provide customers with satisfaction in terms of rapid Receiving and Picking process to generate good service and enhanced productivity. We look forward to kindly serve all companies who need our services, where we provide more than 20,000 pallet positions divided into 4 frozen rooms and 2 chiller rooms.
+             Mega International Sejahtera is a service company that operates a cold storage warehouse starting the end of 2013, located in MM2100 Cibitung Industrial Area, Bekasi, West Java, Indonesia. Supported by modern equipment and systems as well as manpower who are experts in their fields, PT. MEGA INTERNATIONAL SEJAHTERA expected to provide customers with satisfaction in terms of rapid Receiving and Picking process to generate good service and enhanced productivity. We look forward to kindly serve all companies who need our services, where we provide more than 20,000 pallet positions divided into 4 frozen rooms and 2 chiller rooms.
           </p>
 
           <p>
@@ -327,7 +331,7 @@ Target</h5>
         <div class="swiper-slide">
           <div class="testimonial-box">
             <p>
-              “Mega Indo Sejahtera delivers outstanding cold storage services.
+              “Mega International Sejahtera delivers outstanding cold storage services.
               Their monitoring system ensures full temperature control.Cold Storage competency personnel with professionals handling in operations manners, fast response and good corporation with customers.”
             </p>
             <span class="quote-icon">“</span>
@@ -523,8 +527,8 @@ Target</h5>
       <!-- Company -->
       <div class="col-lg-4">
         <h4 class="footer-logo">
-          <img src="../dist/assets/img/mcs-no-bg.png" style="width: 50px; height: 50px;" alt="Logo Mega Indo Sejahtera">
-          Mega Indo Sejahtera</h4>
+          <img src="../dist/assets/img/mcs-no-bg.png" style="width: 50px; height: 50px;" alt="Logo Mega International Sejahtera">
+          Mega International Sejahtera</h4>
         <p class="footer-desc">
           Providing reliable cold storage and temperature-controlled logistics
           solutions to support food, pharmaceutical, and agricultural industries.
@@ -588,7 +592,7 @@ Target</h5>
   <div class="footer-bottom mt-5">
     <div class="container text-center">
       <p class="mb-0">
-        Cold Storage - Mega Indo Sejahtera ©Copyright 2026 All Rights Reserved.
+        Cold Storage - Mega International Sejahtera ©Copyright 2026 All Rights Reserved.
       </p>
     </div>
   </div>
@@ -726,7 +730,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 </script>
 
+<!-- icon WA -->
+<script>
+    const waBtn = document.querySelector('.wa-float');
 
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            waBtn.classList.remove('hidden');
+        } else {
+            waBtn.classList.add('hidden');
+        }
+    });
+
+    // mulai dalam keadaan hidden
+    waBtn.classList.add('hidden');
+</script>
 
 </body>
 </html>
