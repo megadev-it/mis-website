@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+}
+
 /* Condensation background */
 /* Layer embun */
 .condensation-bg {
@@ -282,6 +286,8 @@ body {
     .hero-card p {
       margin-top: 12px;
       font-weight: 600;
+      color: #fff;
+      
     }
 
     .hero-card:hover {
