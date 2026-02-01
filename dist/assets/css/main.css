@@ -181,6 +181,7 @@ a{
 .navbar-custom {
   transition: all 0.3s ease;
   padding: 20px 0;
+  z-index: 9999;
 }
 
 /* SAAT SCROLL */
