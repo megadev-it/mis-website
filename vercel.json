@@ -16,6 +16,6 @@
     { "source": "/contact", "destination": "/pages/contact.html" },
     { "source": "/facilities", "destination": "/pages/facilities.html" },
     { "source": "/iso", "destination": "/pages/iso.html" },
-    { "source": "/service", "destination": "/pages/service.html" }
+    { "source": "/service", "destination": "/service.html" }
   ]
 }
